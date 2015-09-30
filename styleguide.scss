@@ -1,0 +1,54 @@
+/*
+ * CSS RESET
+ * inspired by https://github.com/vladocar/CSS-Mobile-Reset
+ * */
+
+html, body, button, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background-color: #ebebeb;
+    color: #4f4f4f;
+    font-family: "Arial", "Helvetica";
+    font-size: 14px;
+    line-height: 19px;
+    word-wrap: break-word;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* INPUT */
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    border-radius: 4px;
+    resize: none;
+}
+
+body:not(.android-41) select {
+    height: auto;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+/**
+ * Include components
+ */
+
+@include "scaffolding";
+@include "buttons";
+@include "forms";
+@include "typography";
+
+// @TODO: Get this documented
+@include "TODO";
+

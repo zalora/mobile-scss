@@ -1,0 +1,85 @@
+/* ZALORA COMPONENTS */
+
+/* TODO document */
+.section-title {
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 6px;
+}
+
+/* TODO document */
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.hidden { display: none !important; }
+
+/* TODO document */
+.box-attn {
+    border: 2px solid #00b09f;
+    padding: 4px 6px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* TODO document */
+/* It's currently using this SVG for the circle: */
+/* <?xml version="1.0" encoding="utf-8"?> */
+/* <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> */
+/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" */
+/*      width="50px" height="50px"> */
+/* <circle cx="25" cy="25" r="25" fill="#4DCDA4"/> */
+/* <rect fill="none" width="50" height="50"/> */
+/* <polygon fill="#FFFFFF" points="35.3485,11.9985 22.1735,27.1395 13.9985,20.4975 8.999,27.1395 22.1735,38.4955 40.995,17.6765"/> */
+/* </svg> */
+/* Encode at http://www.mobilefish.com/services/base64/base64.php */
+.success-well {
+    border-top: 1px solid #238189;
+    border-bottom: 1px solid #238189;
+    color: #238189;
+    margin: 6px 0;
+    padding: 16px 0 0 65px;
+    background: url('../../images/local_mobile/check.png') no-repeat;
+    background-position: 20px 15px;
+    background-color: rgba(35,129,137, 0.2);
+    min-height: 44px;
+}
+
+.error-well {
+    border-top: 1px solid #238189;
+    border-bottom: 1px solid #238189;
+    color: #238189;
+    margin: 6px 0;
+    padding: 8px 0 8px 65px;
+    background: url('../../images/local_mobile/exclamation.png') no-repeat;
+    background-position: 30px 15px;
+    background-color: rgba(35,129,137, 0.2);
+    min-height: 44px;
+}
+
+/* PURE SPACING */
+
+/* TODO document */
+.lPadSmall {
+    padding-left: 6px !important;
+}
+
+/* TODO document */
+.rPadSmall {
+    padding-right: 6px !important;
+}
+
+/* TODO document */
+.lPadLarge {
+    padding-left: 18px !important;
+}
+
+/* TODO document */
+.rPadLarge {
+    padding-right: 18px !important;
+}

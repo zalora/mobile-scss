@@ -1,0 +1,385 @@
+/*doc
+---
+title: Forms
+name: styleguide-3_0_0
+category: Forms
+---
+
+Forms are a major part of the checkout process, and it plays a large role in other parts of the site. Use the following styles to Zalorify your forms.
+
+For the purposes of this styleguide, `<input type="submit">` is treated as a button. See the buttons section.
+*/
+input:not[type="submit"],
+textarea {
+    width: 200px;
+    max-width: 100%;
+}
+
+.z-input-block {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    padding-right: 0;
+    padding-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*doc
+---
+title: Text Inputs
+name: styleguide-3_1_0
+category: Forms
+---
+
+Your trusty text input. Usually spotted near forms.
+
+```html_example
+<div class="full">
+    <input type="text" placeholder="What's your name?">
+    <input type="password" placeholder="Secret Password">
+    <input type="email" placeholder="Email">
+    <input type="tel" placeholder="1234-5678">
+</div>
+```
+*/
+
+/*doc
+---
+title: Selects
+name: styleguide-3_2_0
+category: Forms
+---
+
+Oh, so many options!
+
+**NOTE:** Android 4.1 has a bug that renders HTML selects incorrectly if they have
+styles attached. To bypass this, set the class `android-41` on the `body`.
+
+```html_example
+<div class="full">
+    <select>
+        <option>To be</option>
+        <option>Not to be</option>
+    </select>
+</div>
+```
+
+*/
+body:not(.android-41) select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    display: inline-block;
+    min-height: 22px;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 25px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/*doc
+---
+title: Textarea
+name: styleguide-3_3_0
+category: Forms
+---
+
+Fill it in, fill it in.
+
+```html_example
+<div class="full">
+    <textarea placeholder="Tell me about yourself..."></textarea>
+</div>
+```
+*/
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #00b09f;
+    outline: 0;
+}
+
+select:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+/*doc
+---
+title: Checkboxes
+name: styleguide-3_4_0
+category: Forms
+---
+
+Checkboxes are typically created inside labels
+
+```html_example
+<div class="full">
+    <label><input type="checkbox"> Send me a newsletter</label>
+</div>
+```
+*/
+
+/*doc
+---
+title: Radio Buttons
+name: styleguide-3_5_0
+category: Forms
+---
+
+These are also created inside labels
+
+```html_example
+<div class="full">
+    <label><input name="vacation" type="radio"> Go to Disneyland</label>
+    <label><input name="vacation" type="radio"> Go to Universal Studios</label>
+</div>
+```
+*/
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin: -2px 3px 0 0;
+    line-height: normal;
+}
+
+
+/*doc
+---
+title: Labels
+name: styleguide-3_6_0
+category: Forms
+---
+
+Labels can be used with any form element. Just precede the element with the
+label. Use the `for` attribute to link the label to its form element.
+
+Checkboxes and radio buttons are the only form elements that are placed inside
+the label.
+
+```html_example
+<div class="full">
+    <label for="nickname">Nickname</label>
+    <input type="text" id="nickname">
+</div>
+<div class="full">
+    <label><input type="checkbox"> I love labels</label>
+</div>
+```
+*/
+label {
+    display: block;
+    margin-bottom: 0;
+}
+
+/*doc
+---
+title: Block level inputs
+name: styleguide-3_8_0
+category: Forms
+---
+
+Use `.z-input-block` to set the following elements as block-level:
+
+- input[type="text"]
+- input[type="password"]
+- input[type="email"]
+- input[type="tel"]
+- select
+- textarea
+
+
+```html_example
+<div class="full">
+    <input type="text" class="z-input-block" placeholder="Block text input">
+    <input type="password" class="z-input-block" placeholder="Block password input">
+    <input type="email" class="z-input-block" placeholder="Block email input">
+    <input type="tel" class="z-input-block" placeholder="Block tel input">
+    <select class="z-input-block"><option>Block select</option></select>
+    <textarea class="z-input-block" placeholder="Block textarea"></textarea>
+</div>
+```
+
+### Appended input
+
+Sometimes, a text input is paired with a button to initiate a form action,
+such as a search. Or sometimes, a static element is appended to a text input
+to represent a fixed aspect of the input. For example. when entering a
+dollar amount, The user may enter "32", and the element appended may show
+".00".
+
+To attach an element to a text input, both the element and the input must be
+wrapped in an element with the class *z-input-append*. In addition, the appended
+element must have the class *add-on*.
+
+**BROWSER BUG**: Inputs on Firefox mobile ~v20 do not respond to line-height.
+The only `add-on` element that works on Firefox mobile is `<button>`.
+So although any element works fine on non-Firefox browsers, use only `<button>`
+on the live site.
+
+**NOTE:** The examples below will overflow from its container.
+For the purposes of this guide, this is normal and is not a bug.
+
+```html_example
+<div class="full">
+    <div class="z-input-append">
+        <input type="text">
+        <input type="submit" class="z-btn add-on" value="Search">
+    </div>
+    <div class="z-input-append">
+        <input type="text" placeholder="$24">
+        <div class="add-on">.00</div>
+    </div>
+</div>
+```
+*/
+.z-input-append {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.z-input-append input[type="text"],
+.z-input-append input[type="email"],
+.z-input-append input[type="tel"] {
+    display: inline-block;
+    margin-top: 1.616161px;
+    margin-right: 0;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+    min-height: 20px; /* Firefox input bug fix. All elements except <button> work */
+}
+
+.z-input-append .add-on {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1.616161px;
+    margin-left: -4px;
+    padding: 4px 8px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    line-height: 20px;
+}
+
+/*doc
+---
+title: Block Level Appended input
+name: styleguide-3_8_1
+category: Forms
+---
+
+To make an appended input group block-level, the structure will change a bit
+from the above example. It must follow these rules:
+
+- In addition to `z-input-append`, the class `z-input-block-append` must be added
+to the wrapping element.
+- The appended element must be placed **before** the text input in the HTML markup.
+- The text input must be wrapped in an element with the class *z-input*.
+
+```html_example
+<div class="full">
+    <div class="z-input-append z-input-block-append">
+        <input type="submit" class="z-btn add-on" value="Search">
+        <div class="z-input">
+            <input type="text">
+        </div>
+    </div>
+    <div class="z-input-append z-input-block-append">
+        <div class="add-on">.00</div>
+        <div class="z-input">
+            <input type="text" placeholder="$24">
+        </div>
+    </div>
+</div>
+```
+*/
+.z-input-block-append {
+    width: 100%;
+}
+
+.z-input-block-append:before,
+.z-input-block-append:after {
+    content: " ";
+    display: table;
+}
+
+.z-input-block-append:after {
+    clear: both;
+}
+
+.z-input-block-append .z-input {
+    overflow: hidden;
+    padding-right: 3px;
+}
+
+.z-input-block-append .add-on {
+    float: right;
+}
+
+.z-input-block-append .z-input input {
+    width: 100%;
+}
+
+/*doc
+---
+title: Inline Groups
+name: styleguide-3_9_0
+category: Forms
+---
+
+Wrap inputs with the class `inline-group` to semantically group them.
+
+```html_example
+<div class="full">
+    <div class="inline-group">
+        <label>Name</label>
+        <input type="text" style="width: 100px;">
+    </div>
+    <hr>
+    <div class="inline-group">
+        <select>
+            <option>Jan</option>
+            <option>Feb</option>
+        </select>
+        <select>
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <select>
+            <option>1992</option>
+            <option>1993</option>
+        </select>
+    </div>
+</div>
+```
+*/

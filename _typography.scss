@@ -1,0 +1,336 @@
+
+
+/* TYPOGRAPHY */
+
+.h1 {
+    font-size: 28px;
+}
+
+.h2 {
+    font-size: 24px;
+}
+
+.h3 {
+    font-size: 20px;
+}
+
+.h4 {
+    font-size: 16px;
+}
+
+.h5 {
+    font-size: 14px;
+}
+
+.h6 {
+    font-size: 12px;
+}
+
+/*doc
+---
+title: Typography
+name: styleguide-4_0_0
+category: Typography
+---
+
+Text on mobile devices has a much more limited range than on desktop.
+
+This section introduces semantic typography optimized for legibility on a mobile device.
+*/
+
+/*doc
+---
+title: Headings
+name: styleguide-4_1_0
+category: Typography
+---
+
+The traditional HTML headings are used on ZALORA for SEO purposes and are left unstyled.
+
+Therefore use the following classes to style headings: `.h1` through `.h6`.
+
+```html_example
+<h1 class="h1">Heading 1</h1>
+<h2 class="h2">Heading 2</h2>
+<h3 class="h3">Heading 3</h3>
+<h4 class="h4">Heading 4</h4>
+<h5 class="h5">Heading 5</h5>
+<h6 class="h6">Heading 6</h6>
+```
+*/
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 4px 0 6px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+}
+
+.h1, .h2 {
+    line-height: 30px;
+}
+
+.h3 {
+    line-height: 24px;
+}
+
+
+/*doc
+---
+title: Sections
+name: styleguide-4_2_0
+category: Typography
+---
+
+Zalora is built with HTML 5, and content should be divided with *&lt;section&gt;* tags.
+
+Sections have a bottom margin that space them from their sibling elements.
+Use `&<section>`s over grid elements for semantically dividing content.
+Grid elements are useful when you want to split your content into columns.
+
+```html_example
+<div class="full">
+    <section>
+        This is one section here
+    </section>
+    <section>
+        This is another.
+    </section>
+</div>
+<div class="half">
+    <section>
+        This is one section in column one.
+    </section>
+    <section>
+        This is another right below.
+    </section>
+</div>
+<div class="half">
+    <section>
+        Here we are in column two.
+    </section>
+    <section>
+        And another one below.
+    </section>
+</div>
+```
+*/
+section {
+    margin-bottom: 12px;
+}
+
+/*doc
+---
+title: Body copy
+name: styleguide-4_3_0
+category: Typography
+---
+
+Zalora mobile's default `font-size` is **14px**, with a `line-height` of **19px**. This is applied to the `<body>` and all paragraphs. Paragraphs `<p>` and `<section>`s receive a bottom margin of half their line-height by default.
+
+```html_example
+<div class="full">
+    <p>Praesent enim nunc, bibendum a interdum sed, vestibulum eget eros. Pellentesque eleifend enim eu urna tristique consequat. Pellentesque ut nisi in tellus placerat lobortis. Curabitur aliquet blandit turpis, a suscipit augue porta ac. Sed sed ipsum turpis.</p>
+    <p>Cras tortor sapien, volutpat a lacinia in, blandit ac velit. Etiam dictum odio lacus, eget porta nisl. Fusce condimentum euismod fermentum. Sed nec mauris erat, ac varius mi.</p>
+</div>
+```
+*/
+p {
+    margin: 4px 0 6px 0;
+}
+
+/*doc
+---
+title: Font sizes
+name: styleguide-4_3_1
+category: Typography
+---
+
+There are five available text sizes on the mobile site:
+
+- Extra Small  `.font-xsmall`
+- Small        `.font-small`
+- Regular
+- Large        `.font-large`
+- Extra Large  `.font-xlarge`
+
+No special markup is needed for regular text.
+
+If you apply these classes to a wrapper element, all inner elements except
+headings and buttons will respond. For buttons, use the button size classes.
+
+```html_example
+<div class="full">
+    <section>
+        <p class="font-xlarge">Extra large text</p>
+        <p class="font-large">Large text</p>
+        <p>Regular text</p>
+        <p class="font-small">Small text</p>
+        <p class="font-xsmall">Extra small text</p>
+    </section>
+</div>
+```
+*/
+.font-xlarge {
+    font-size: 16px;
+}
+
+.font-large {
+    font-size: 15px;
+}
+
+.font-small {
+    font-size: 12px;
+}
+
+.font-xsmall {
+    font-size: 11px;
+}
+
+
+/*doc
+---
+title: Text Emphasis - Style
+name: styleguide-4_4_0
+category: Typography
+---
+
+Emphasize text by making it italic with `<em>`, or bold with `<strong>`.
+
+Or change the case with *text-upper* or `text-lower`.
+
+```html_example
+<p><em>This is italic text</em></p>
+<p><strong>This is bold text</strong></p>
+<p class="text-upper">This text is in uppercase</p>
+<p class="text-lower">This text is in lowercase</p>
+<p class="text-2em">This text is vertically aligned in the middle with 0.5em padding in top and bottom</p>
+```
+*/
+em {
+    font-style: italic;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-lower {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-2em {
+    line-height: 2em;
+}
+
+
+/*doc
+---
+title: Text Emphasis - Color
+name: styleguide-4_4_1
+category: Typography
+---
+
+Use color to convey meaning about the content.
+
+```html_example
+<p class="text-muted">This is muted text</p>
+<p class="text-muted-2">This is muted text 2</p>
+<p class="text-muted-3">This is muted text 3</p>
+<p class="text-red">This is red text</p>
+<p class="text-wine">This is wine text</p>
+<p class="text-white">This is white text</p>
+<p class="text-gray">This is gray text</p>
+<p class="text-black">This is black text</p>
+<p class="text-success">This is success text</p>
+<p class="text-info">This is informational text</p>
+<p class="text-attention">This is important text</p>
+<p class="text-attention-inverted">This is important text inverted</p>
+```
+*/
+.text-muted {
+    color: #767676;
+}
+
+.text-muted-2 {
+    color: #6c6c6c;
+}
+
+.text-muted-3 {
+    color: #888888;
+}
+
+.text-red {
+    color: #B01919;
+}
+
+.text-wine {
+    color: #890000;
+}
+
+.text-white {
+    color: #FFF;
+}
+
+.text-gray {
+    color: #313131;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-info {
+    color: #313131;
+}
+
+.text-success {
+    color: #147820;
+}
+
+.text-attention {
+    color: #00b09f;
+}
+
+.text-attention-inverted {
+    color: #43ffec;
+}
+
+/*doc
+---
+title: Thematic Break
+name: styleguide-4_5_0
+category: Typography
+---
+
+Use `<hr>` to represent a thematic break between content.
+
+```html_example
+<section>
+    <p>Here is some content</p>
+</section>
+<hr>
+<section>
+    <p>Here is some other content</p>
+</section>
+```
+*/
+hr {
+    border: none;
+    height: 0;
+    margin: 8px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+a { color: #333333; text-decoration: none; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+ul, ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+select { margin-bottom: 4px; }

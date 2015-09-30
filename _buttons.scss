@@ -1,0 +1,339 @@
+/*doc
+---
+title: Buttons
+name: styleguide-2_0_0
+category: Buttons
+---
+
+Use the standard `.z-btn` for form actions and button link actions. These are heavily used in the checkout module and throughout the site.
+
+Buttons can be used with `<a></a>`, `<button></button>`, or `<input type="submit">`. Unexpected and BAD things can happen if you use any other elements for button styling.
+
+- `:active` - Shows the button pressed down.
+- `.disabled` - Grays and dims the button to indicate that it cannot be used.
+*/
+
+/*doc
+---
+title: Button Types
+name: styleguide-2_1_0
+category: Buttons
+---
+
+There are four types of buttons in web mobile:
+
+- *Button:* This is the default button
+- *Primary:* This is used for CTAs
+- *Attention:* Not sure where this is used
+- *Muted:* To de-emphasize less important actions
+
+Each type has three states:
+
+- Default
+- Active
+- Disabled
+
+Buttons can either fit their content, or be block-level.
+*/
+
+/*doc
+---
+title: Default Button
+name: styleguide-2_1_1
+category: Buttons
+---
+
+Your good old standard button. Add the class `.z-btn` to a `<a></a>`, `<button></button>`, or `<input type="submit">` tag.
+
+```html_example
+<div class="full">
+    <button class="z-btn">Button (button.z-btn)</button>
+</div>
+<div class="full">
+    <a href="#" class="z-btn">Button (a.z-btn)</a>
+</div>
+<div class="full">
+    <input type="submit" value="Button (input.z-btn)" class="z-btn" />
+</div>
+<div class="full">
+    <button class="z-btn active">Active Button</button>
+</div>
+<div class="full">
+    <button class="z-btn disabled">Disabled</button>
+</div>
+```
+
+*/
+.z-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    width: auto;
+    margin: 0 0 4px 0;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: #E5E5E5;
+    -webkit-border-radius: 0;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+
+.z-btn.active,
+.z-btn:active {
+    background-color: #FFFFFF;
+    color: #bcbcbc;
+}
+
+.z-btn.disabled,
+.z-btn[disabled] {
+    cursor: default;
+    background-color: #FFFFFF;
+    color: #bcbcbc;
+}
+
+/*doc
+---
+title: Primary Button
+name: styleguide-2_1_2
+category: Buttons
+---
+
+For the main form action. Usually used when making a decision. Add the classes `.z-btn .z-btn-primary`.
+
+```html_example
+<div class="full">
+    <button class="z-btn z-btn-primary">Button (button.z-btn)</button>
+</div>
+<div class="full">
+    <a href="#" class="z-btn z-btn-primary">Button (a.z-btn)</a>
+</div>
+<div class="full">
+    <input type="submit" value="Button (input.z-btn)" class="z-btn z-btn-primary" />
+</div>
+<div class="full">
+    <button class="z-btn z-btn-primary active">Active</button>
+</div>
+<div class="full">
+    <button class="z-btn z-btn-primary disabled">Disabled</button>
+</div>
+```
+*/
+.z-btn-primary {
+    color: #fff;
+    background-color: #000;
+    border: 0;
+}
+
+.z-btn-primary:active,
+.z-btn-primary.active {
+    color: #AAAAAA;
+    background-color: #000000;
+}
+
+.z-btn-primary.disabled,
+.z-btn-primary[disabled] {
+    color: #A5A5A5;
+    background-color: #6D6D6D;
+}
+
+/*doc
+---
+title: Attention Buttons
+name: styleguide-2_1_3
+category: Buttons
+---
+
+Use these to emphasize an action. Works best when used together with
+other kinds of buttons.
+
+Use the class `z-btn-attn` along with `z-btn`.
+
+```html_example
+<div class="full">
+    <button class="z-btn z-btn-attn">Attention Button</button>
+    <button class="z-btn">Regular Button</button>
+</div>
+```
+*/
+.z-btn-attn {
+  color: #fff;
+  background-color: #238189;
+  font-size: 15px;
+}
+
+/*doc
+---
+title: Muted Buttons
+name: styleguide-2_1_4
+category: Buttons
+---
+
+Use these to de-emphasize an action. Works best when used together with
+other kinds of buttons.
+
+Use the class `z-btn-muted` along with `z-btn`.
+
+```html_example
+<div class="full">
+    <button class="z-btn z-btn-muted">Muted Button</button>
+    <button class="z-btn">Regular Button</button>
+</div>
+```
+*/
+.z-btn-muted {
+    color: #797979;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #ebebeb);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    background-image: -webkit-linear-gradient(top, #ffffff, #ebebeb);
+    background-image: -o-linear-gradient(top, #ffffff, #ebebeb);
+    background-image: linear-gradient(to bottom, #ffffff, #ebebeb);
+}
+
+
+input:not[type="checkbox"],
+input:not[type="radio"],
+textarea {
+    -webkit-appearance: none;
+}
+
+/*doc
+---
+title: Block-level Buttons
+name: styleguide-2_2_0
+category: Buttons
+---
+
+Sometimes buttons are block level. These are generally for important form actions.
+To use, add `.z-btn-block` to an existing button.
+
+```html_example
+<div class="full">
+    <button class="z-btn z-btn-block">Do something important</button>
+</div>
+<div class="full">
+    <a class="z-btn z-btn-block">Do something important</a>
+</div>
+<div class="half">
+    <input type="submit" class="z-btn z-btn-block" value="Half Button">
+</div>
+<div class="half">
+    <button class="z-btn z-btn-block disabled">Disabled</button>
+</div>
+```
+*/
+.z-btn-block {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0 auto;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 1em;
+}
+
+/*doc
+---
+title: Button Sizes
+name: styleguide-2_3_0
+category: Buttons
+---
+
+There are times when a button needs to be emphasized or deemphasized.
+
+Use `.z-btn-slim` to slim down the button. Use `z-btn-thick` to fatten it up.
+
+```html_example
+<div class="full">
+    <h4>Inline</h4>
+    <button class="z-btn z-btn-slim">Slim</button>
+    <button class="z-btn">Reg</button>
+    <button class="z-btn z-btn-thick">Thick</button>
+</div>
+<div class="full">
+    <h4>Block</h4>
+    <button class="z-btn z-btn-block z-btn-slim">Slim</button>
+    <button class="z-btn z-btn-block">Reg</button>
+    <button class="z-btn z-btn-block z-btn-thick">Thick</button>
+</div>
+```
+*/
+.z-btn-slim {
+    padding: 3px 12px;
+}
+
+.z-btn-thick {
+    padding: 10px 12px;
+    font-size: 22px;
+}
+
+/*doc
+---
+title: Inline Buttons
+name: styleguide-2_4_0
+category: Buttons
+---
+
+Buttons are already inline by default, but they don't have user-friendly
+spacing.
+
+Wrap buttons with the class `inline-group` to semantically group them.
+
+```html_example
+<div class="full">
+    <div class="inline-group">
+        <button class="z-btn">Opt 1</button>
+        <button class="z-btn">Opt 2</button>
+        <button class="z-btn">Opt 3</button>
+    </div>
+    <div class="inline-group">
+        <select>
+            <option>Jan</option>
+            <option>Feb</option>
+        </select>
+        <select>
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <select>
+            <option>1992</option>
+            <option>1993</option>
+        </select>
+    </div>
+</div>
+```
+*/
+.inline-group select:not(:last-child),
+.inline-group input:not(:last-child),
+.inline-group label,
+.inline-group .z-btn:not(:last-child) {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+/*doc
+---
+title: Hypertext Links
+name: styleguide-2_5_0
+category: Buttons
+---
+
+Styles your anchor tags like a traditional hypertext link.
+
+```html_example
+<div class="full">
+    <a class="z-link" href="#">This is a link</a>
+</div>
+```
+*/
+.z-link {
+    text-decoration: underline;
+}
