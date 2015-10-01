@@ -255,6 +255,7 @@ It is enough to have a line break between grid elements. This notice is importan
 <div class="one-quarter">1 of 4</div> <div class="one-quarter">2 of 4</div> <div class="one-quarter">3 of 4</div> <div class="one-quarter">4 of 4</div>
 <div class="one-quarter">1/4</div> <div class="three-quarters">3/4</div>
 ```
+> highlightgrid centergrid
 */
 .full, .three-quarters, .two-thirds, .half, .one-third, .one-quarter {
     display: inline-block;
@@ -324,6 +325,7 @@ This works for any block level element.
 </div>
 <div class="one-third align-left">Left</div> <div class="one-third align-center">Center</div> <div class="one-third align-right">Right</div>
 ```
+> highlightgrid
 */
 .align-left {
     text-align: left;
