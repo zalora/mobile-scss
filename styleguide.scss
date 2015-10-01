@@ -44,11 +44,12 @@ body:not(.android-41) select {
  * Include components
  */
 
-@include "scaffolding";
-@include "buttons";
-@include "forms";
-@include "typography";
+@import
+    "scaffolding",
+    "buttons",
+    "forms",
+    "typography";
 
 // @TODO: Get this documented
-@include "TODO";
+@import "TODO";
 
